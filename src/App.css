@@ -1,38 +1,85 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.card{
+  width: 240px;
+  height: 300px;
+  border: 1px solid black;
+  margin-left: 25px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-radius: 10px;
+  box-shadow: 3px 3px rgb(66, 68, 64);
+  background-color: rgb(26, 22, 22);
+}
+.cardImage{
+  width: 240px;
+  height: 200px;
 }
 
-.App-link {
-  color: #61dafb;
+span{
+  font-size: 25px;
+  color: gold;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.intro{
+  display: flex;
+  justify-content: center;
 }
+.searchBar{
+  height: 50px;
+  width: 300px;
+  border: 1px solid rgb(80, 69, 69);
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif ;
+  color: black;
+  background-color: goldenrod;
+  padding: 2px 20px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+}  
+.searchBar:focus{
+  outline: 0;
+}
+.searchArea{
+  margin-top: 20px;
+}
+.searchRating{
+
+   margin-left: 50px;
+   line-height: 1.2;
+     
+}
+.btn{
+  height: 56px;
+  background-color: rgb(17, 16, 16);
+  color: goldenrod;
+  cursor: pointer;
+  border: .2px solid goldenrod;
+  border-radius: 49%;
+  margin-left: 10px;
+}
+.btn:hover{
+  background-color: goldenrod;
+  color: rgb(17, 16, 16);
+  transition: .5s;
+  
+}
+h2{
+  color: chartreuse;
+  font-size: 100px;
+  cursor: pointer;
+}
+h3{
+  color: goldenrod;
+}
+::placeholder{
+  font-size: 20px;
+  color: rgb(112, 112, 71);
+}
+
