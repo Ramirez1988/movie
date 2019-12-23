@@ -10,9 +10,8 @@ function NameFilter({value, onChangeName}) {
             placeholder='Search'
             value={value} 
             type='text' 
-            onChange={(event)=>{
-                onChangeName(event.target.value)
-            }}/>
+            onChange={(event)=>onChangeName(event.target.value)}
+            />
             <input className='btn' type='button' value='Movies'/>
             
         </div>

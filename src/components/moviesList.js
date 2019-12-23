@@ -1,18 +1,27 @@
-import React from 'react'
+import React, { Component } from 'react'
 import MoviesCard from './moviesCard';
+import Spinner from './spinner'
 
- function MoviesList ({films=[],onAddMovie = ()=>{}}) {         
-           
-        return (
-            <div style={{display:'flex',flexWrap:'wrap'}}>
-                {films.map((el,i) =>
+ class MoviesList extends Component {    
+     state={
+         isLoading:true
+     }     
+     componentDidMount(){
+         setTimeout(()=>this.setState({isLoading:false}),2000)
+     }
+        render() {
+            return (
+                this.state.isLoading ? <Spinner /> :
+                <div style={{display:'flex',flexWrap:'wrap'}}>
+                {this.props.films.map((el,i) =>
                 <MoviesCard
                 key={i}
                 Movie={el}
                 />
                 )}
                 <div className='card'>
-                 <h2 onClick={()=>onAddMovie({
+                 <h2 onClick={()=>this.props.onAddMovie({
+                                          
                      title: prompt('insert movie title: '),
                      year: prompt('insert movie year: '),
                      link: prompt('insert movie link: '),
@@ -20,8 +29,10 @@ import MoviesCard from './moviesCard';
                  })
                  }>+</h2>
                 </div>   
-            </div>
-        )
+                </div>
+          
+        
+        )}
     }
 export default MoviesList;
 

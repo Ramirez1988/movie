@@ -12,7 +12,7 @@ function Rating({count, onChangeRate = () =>{}}) {
 
     }
     return (
-        <div>
+        <div style={{marginLeft:'10px'}}>
             {stars}
         </div>
     )

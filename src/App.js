@@ -52,13 +52,7 @@ import "./App.css";
         year: "2013",
         link: " http://bit.do/fmfBi",
         rate: 2
-      },
-      {
-        title: "Drive",
-        year: "2011",
-        link: " http://bit.do/fk7r4",
-        rate: 3
-      },            
+      }                  
     ]
   };
 

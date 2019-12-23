@@ -4,12 +4,11 @@ import Rating from './rating'
 function RatingFilter({onChangeRating, count}) {
     return (
         <div className='searchRating'>
-            <p>Minimum Rating</p>
-            <Rating 
+            <p style={{textDecoration:'underline'}}> <strong>Min Rating</strong></p>
+            <Rating             
             count={count} 
-            onChangeRate={(newRating)=>{
-                onChangeRating(newRating)
-            }}/>
+            onChangeRate={(newRating)=>onChangeRating(newRating)}
+            />
             
         </div>
     )
