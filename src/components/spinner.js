@@ -1,19 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Loader from 'react-loader-spinner'
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
-export class Spinner extends Component {
-    render() {
-        return (
+ function spinner() {
+    return (
+        <div>
             <Loader
             type="Puff"
-            color="#00BFFF"
-            height={100}
-            width={100}            
-   
-         />
-        )
-    }
+            color="#ef339a"
+            height={50}
+            width={50}        
+            />
+        </div>
+    )
 }
-
-export default Spinner;
+export default spinner;

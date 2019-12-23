@@ -53,18 +53,27 @@ import "./App.css";
         link: " http://bit.do/fmfBi",
         rate: 2
       }                  
-    ]
+    ],
+    isLoading:false
   };
-
+  componentDidMount=()=>{
+    setTimeout(()=>this.setState({isLoading:false}),2000)
+    this.setState({isLoading:true})
+   
+}
     addRating = (newValue) =>{
+      setTimeout(()=>this.setState({isLoading:false}),2000)
       this.setState({
-        minRating:newValue
+        minRating:newValue,
+        isLoading:true
       })    
     }  
 
     nameSearch = (newTitleFilter) => {
+      setTimeout(()=>this.setState({isLoading:false}),2000)
       this.setState({
-         titleFilter: newTitleFilter
+         titleFilter: newTitleFilter,
+         isLoading:true
         })              
     }
 
@@ -81,10 +90,12 @@ import "./App.css";
           <NameFilter value={this.state.titleFilter} onChangeName={this.nameSearch}/>            
           <RatingFilter count={this.state.minRating}  onChangeRating={this.addRating} /> 
         </div>                  
-        <MoviesList  
+        <MoviesList   isLoading= {this.state.isLoading}
         films={this.state.Films.filter(el=>el.rate>=this.state.minRating &&
           el.title.toLowerCase().includes(this.state.titleFilter.toLowerCase().trim()))} 
-        onAddMovie={this.addMovie}   />
+        onAddMovie={this.addMovie}  
+        load={this.componentDidMount}
+        />
       </div>
     )
   }
